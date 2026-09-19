@@ -1,8 +1,6 @@
-// dut.v
-// Top-level wrapper so the same tb.v can test either implementation.
-// Exactly ONE of the two instantiations below should be uncommented at a
-// time. Comment out the other one, save, and re-run the simulation.
-
+// ==========================================
+// Top-Level DUT Wrapper
+// ==========================================
 module DUT (
   input  I0,
   input  I1,
@@ -10,7 +8,7 @@ module DUT (
   output Y
 );
 
-  // ---- Option 1: dataflow version ----
+  // ---- Option 1: Dataflow version ----
   mux_df U1 (
     .I0 (I0),
     .I1 (I1),
@@ -18,7 +16,8 @@ module DUT (
     .Y  (Y)
   );
 
-  // ---- Option 2: behavioral version ----
+  // ---- Option 2: Behavioral version ----
+  // To test Option 2, comment out mux_df U1 above and uncomment below:
   // mux_beh U1 (
   //   .I0 (I0),
   //   .I1 (I1),
